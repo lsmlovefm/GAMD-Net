@@ -13,7 +13,7 @@ by Simin Luan, [Cong Yang](https://cong-yang.github.io/), Xue Qing, ([pdf](http:
 ## Composite blurred image
 
 ### Prerequisites
-- Python2.7
+- Python
 - Scipy
 - Pandas
 - OS
@@ -23,7 +23,7 @@ by Simin Luan, [Cong Yang](https://cong-yang.github.io/), Xue Qing, ([pdf](http:
 ### Installation
 Clone this project to your machine. 
 
-```
+```bash
 git clone https://github.com/lsmlovefm/GAMD-Net.git
 cd Image_blur
 ```
@@ -45,7 +45,9 @@ Imageblur
 │ ├─ data % download from [this](https://drive.google.com/file/d/10inB3MHqycfK1awgBy13lNNyj1L8amvY/view?usp=drive_link)
 ```
 
-```python imageblur/imageblur.py```
+```bash
+python imageblur/imageblur.py
+```
 
 
 ## GAMD network
@@ -95,7 +97,9 @@ GAMD
 
 Train GAMD, run the command below:
 
-``` python main.py --mode "train" --data_dir "training_set" ```
+```bash
+python main.py --mode "train" --data_dir "training_set"
+```
 
 Model weights will be saved in ``` results/model_name/weights``` folder.
 
@@ -104,13 +108,9 @@ Model weights will be saved in ``` results/model_name/weights``` folder.
 
 Test GAMD , run the command below:
 
-```python main.py --mode "test" --data dir "training_set" --test_model "best.pkl" ```
-
-
-If you have a GPU, please include `--gpu` argument, and add your gpu id to your command. 
-Otherwise, use `--gpu=-1` for CPU. 
-
 ```bash
-python main.py --mode "test" --data dir "training_set" --test_model "best.pkl" --gpu 1
-```
+python main.py --mode "test" --data dir "training_set" --test_model "best.pkl"
+ ```
+
+Model link: https://drive.google.com/file/d/1Z-Af3qCtzJZAoOyfDItCYDPssVs_Wx8S/view?usp=drive_link
 
