@@ -1,5 +1,4 @@
 # Gyroscope-Aided Motion Deblurring with Deep Networks
-by Simin Luan, [Cong Yang](https://cong-yang.github.io/), Xue Qing, ([pdf](http://www.))
 
 ### Our results on Blur-IMU
 <img src="./image/result.png" width="100%">
