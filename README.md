@@ -23,7 +23,7 @@ by Simin Luan, [Cong Yang](https://cong-yang.github.io/), Xue Qing, ([pdf](http:
 ### Installation
 Clone this project to your machine. 
 
-```bash
+```
 git clone https://github.com/lsmlovefm/GAMD-Net.git
 cd Image_blur
 ```
@@ -31,6 +31,7 @@ cd Image_blur
 ### Process
 Download blurred image metadata from [dataset](https://drive.google.com/file/d/10inB3MHqycfK1awgBy13lNNyj1L8amvY/view?usp=drive_link) inside `Imageblur/data`. Then place the image that needs to be blurred into `imageblur/image`. It should be noted that the default image pixels are 740*580. You can use this method to combine clear images in Realblur and GoPro into blurry images.
 
+```
 Imageblur
 ├─ Imageblur
 │ ├─ blur    % blurred image
@@ -44,9 +45,7 @@ Imageblur
 │ ├─ data % download from [this](https://drive.google.com/file/d/10inB3MHqycfK1awgBy13lNNyj1L8amvY/view?usp=drive_link)
 ```
 
-```bash
-python imageblur/imageblur.py
-```
+```python imageblur/imageblur.py```
 
 
 ## GAMD network
