@@ -2,7 +2,7 @@ import os
 import torch
 import argparse
 from torch.backends import cudnn
-from models.GAMDUNet import build_net
+from models.GAMDNet import build_net
 from train import _train
 from eval import _eval
 
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Directories
-    parser.add_argument('--model_name', default='GAMD-UNet', choices=['GAMD-UNet'], type=str)
+    parser.add_argument('--model_name', default='GAMD-UNetPlus', choices=['GAMD-UNet', 'GAMD-UNetPlus'], type=str)
     parser.add_argument('--data_dir', type=str, default='dataset/GOPRO')
     parser.add_argument('--mode', default='test', choices=['train', 'test'], type=str)
 
@@ -55,6 +55,8 @@ if __name__ == '__main__':
     # Test
     parser.add_argument('--test_model', type=str, default='weights/GAMD-UNet.pkl')
     parser.add_argument('--save_image', type=bool, default=False, choices=[True, False])
+    parser.add_argument('--half_precision', type=bool, default=False, choices=[True, False],
+                        description='Enable half precision inference (test only)')
 
     args = parser.parse_args()
     args.model_save_dir = os.path.join('results/', args.model_name, 'weights/')

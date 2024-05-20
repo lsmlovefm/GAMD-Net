@@ -16,7 +16,7 @@ def _eval(model, args):
     torch.cuda.empty_cache()
     adder = Adder()
     model.eval()
-    with torch.no_grad():
+    with torch.no_grad(), (torch.cuda.amp.autocast() if args.half_precision else None):
         psnr_adder = Adder()
 
         # Hardware warm-up
