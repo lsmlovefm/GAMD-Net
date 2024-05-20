@@ -55,8 +55,8 @@ if __name__ == '__main__':
     # Test
     parser.add_argument('--test_model', type=str, default='weights/GAMD-UNet.pkl')
     parser.add_argument('--save_image', type=bool, default=False, choices=[True, False])
-    parser.add_argument('--half_precision', type=bool, default=False, choices=[True, False],
-                        description='Enable half precision inference (test only)')
+    parser.add_argument('--half_precision', default=False, action='store_true',
+                        help='Enable half precision inference (test only)')
 
     args = parser.parse_args()
     args.model_save_dir = os.path.join('results/', args.model_name, 'weights/')
