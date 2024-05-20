@@ -6,6 +6,7 @@ from utils import Adder
 from data import test_dataloader
 from skimage.metrics import peak_signal_noise_ratio
 import time
+from contextlib import nullcontext
 
 
 def _eval(model, args):
@@ -16,7 +17,11 @@ def _eval(model, args):
     torch.cuda.empty_cache()
     adder = Adder()
     model.eval()
-    with torch.no_grad():
+
+    if args.half_precision:
+        print("Enabling half precision inference")
+
+    with torch.no_grad(), torch.cuda.amp.autocast() if args.half_precision else nullcontext():
         psnr_adder = Adder()
 
         # Hardware warm-up
