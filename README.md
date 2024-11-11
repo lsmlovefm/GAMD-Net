@@ -1,4 +1,4 @@
-# Gyroscope-Aided Motion Deblurring with Deep Networks
+# Deblur
 
 ### Our results on Blur-IMU
 <img src="./image/result.png" width="100%">
